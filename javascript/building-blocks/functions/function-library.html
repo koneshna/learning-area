@@ -34,6 +34,15 @@
         }
         return num;
       }
+      function squareroot(num) {
+        let t;
+        let sqrt = num / 2;
+        {
+          t = sqrt;
+          sqrt = (t + num / t) / 2;
+        }
+        return sqrt;
+      }
       input.addEventListener("change", () => {
         const num = parseFloat(input.value);
         if (isNaN(num)) {
@@ -42,6 +51,9 @@
           para.textContent = `${num} squared is ${squared(num)}. `;
           para.textContent += `${num} cubed is ${cubed(num)}. `;
           para.textContent += `${num} factorial is ${factorial(num)}. `;
+          para.textContent += `The square root of ${num}  is ${squareroot(
+            num
+          )}. `;
         }
       });
     </script>
